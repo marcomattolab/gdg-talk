@@ -1,0 +1,16 @@
+---
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<div id={`slide${n}`} class="slide wscreen h-screen" data-n={n}>
+  <iframe src="https://codesandbox.io/p/github/marcomattolab/angular-18-demo/main?embed=1&file=%2Fsrc%2Fapp%2Fdashboard%2Fdashboard.component.html"
+     style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="marcomattolab/angular-18-demo/main"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+</div>

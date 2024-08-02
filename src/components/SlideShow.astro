@@ -1,0 +1,82 @@
+<div>
+  <div
+    id="slideNumber"
+    class="fixed bottom-4 right-4 flex justify-center items-center w-8 h-8 text-zinc-400"
+  >
+  </div>
+  <slot />
+</div>
+
+<script is:inline>
+const slides = document.querySelectorAll(".slide");
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries
+            .filter((entry) => entry.isIntersecting)
+            .forEach((entry) => {
+                const { n } = entry.target.dataset;
+                localStorage.setItem("currentSlide", n);
+                document.getElementById("slideNumber").innerHTML = `${n < 10 ? `0${n}` : n
+                    }`;
+            });
+    },
+    {
+        threshold: 0.5,
+    }
+);
+slides.forEach((slide) => observer.observe(slide));
+
+window.addEventListener("keydown", (e) => {
+    const { code } = e;
+
+    const nSlides = document.querySelectorAll(".slide").length;
+    const currentSlide = parseInt(
+        localStorage.getItem("currentSlide") || "0",
+        10
+    );
+    let slideId = null;
+
+    if (code === "ArrowRight") {
+        slideId = `slide${Math.min(currentSlide + 1, nSlides - 1)}`;
+    } else if (code === "ArrowLeft") {
+        slideId = `slide${Math.max(currentSlide - 1, 0)}`;
+    } else if (code === "Space") {
+        slideId = `slide${currentSlide}`;
+    }
+
+    if (slideId) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const slide = document.getElementById(slideId);
+        slide.scrollIntoView({ behavior: "smooth" });
+    }
+});
+
+window.addEventListener("keydown", (e) => {
+    const { code } = e;
+    const html = document.querySelector("html");
+
+    const currentFontSize = parseInt(html.style.fontSize, 10);
+    let nextFontSize = currentFontSize;
+    let fontAdjusted = false;
+
+    if (code === "ArrowUp") {
+        nextFontSize = currentFontSize + 1;
+        fontAdjusted = true;
+    } else if (code === "ArrowDown") {
+        nextFontSize = currentFontSize - 1;
+        fontAdjusted = true;
+    } else if (code === "Space") {
+        nextFontSize = 16;
+        fontAdjusted = true;
+    }
+
+    html.style.fontSize = `${nextFontSize}px`;
+
+    if (fontAdjusted) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+});
+</script>

@@ -1,0 +1,153 @@
+---
+import Slide from "../components/Slide.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <h2
+    id="thank-you-text"
+    class="block w-full h-72 relative font-black tracking-tighter en"
+    style={{
+      fontSize: "15rem",
+    }}
+  >
+    {
+      [
+        {
+          lang: "en",
+          text: "Thanks",
+        },
+        {
+          lang: "vn",
+          text: "Cảm ơn",
+        },
+        {
+          lang: "fr",
+          text: "Merci",
+        },
+        {
+          lang: "es",
+          text: "Gracias",
+        },
+        {
+          lang: "de",
+          text: "Danke",
+        },
+        {
+          lang: "it",
+          text: "Grazie",
+        },
+        {
+          lang: "mu",
+          text: "Mersi",
+        },
+      ].map((thanks) => (
+        <div
+          class={`absolute top-0 left-0 w-full h-72 text-center text-zinc-900 opacity-0 transition-opacity duration-1000 ${thanks.lang}`}
+        >
+          {thanks.text}
+        </div>
+      ))
+    }
+  </h2>
+
+  <div
+    class="relative mt-8 p-8 bg-zinc-900 text-white rounded-lg shadow-2xl w-[30rem]"
+  >
+    <div class="absolute top-8 right-8">
+      <img src="imgs/elca-white.svg" class="w-20" />
+    </div>
+    <p class="font-bold text-xl">Marco Martorana</p>
+    <p>Senior Software Developer</p>
+    <p class="mb-12">Palermo</p>
+    <p class="flex items-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="mr-2"
+        ><rect width="20" height="16" x="2" y="4" rx="2"></rect><path
+          d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg
+      >
+      <a href="mailto:marco.martorana@elca.ch">marco.martorana@elca.ch</a>
+    </p>
+    <p class="flex items-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="mr-2"
+        ><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+        ></path><path
+          d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+        ></path></svg
+      >
+      <a href="https://www.linkedin.com/in/marcomartorana/"
+        >https://www.linkedin.com/in/marcomartorana</a
+      >
+    </p>
+  </div>
+</Slide>
+
+<style>
+  #thank-you-text.en .en {
+    opacity: 100;
+  }
+
+  #thank-you-text.vn .vn {
+    opacity: 100;
+  }
+
+  #thank-you-text.fr .fr {
+    opacity: 100;
+  }
+
+  #thank-you-text.es .es {
+    opacity: 100;
+  }
+
+  #thank-you-text.de .de {
+    opacity: 100;
+  }
+
+  #thank-you-text.it .it {
+    opacity: 100;
+  }
+
+  #thank-you-text.mu .mu {
+    opacity: 100;
+  }
+</style>
+
+<script>
+  const thankYouLangs = ["vn", "fr", "es", "de", "it", "mu", "en"];
+  const thankYouText = document.getElementById("thank-you-text");
+  let thankYouIndex = 0;
+
+  setInterval(() => {
+    thankYouLangs.forEach((lang) => {
+      thankYouText?.classList.remove(lang);
+    });
+    thankYouText?.classList.add(
+      thankYouLangs[thankYouIndex % thankYouLangs.length]
+    );
+    thankYouIndex++;
+  }, 2000);
+</script>

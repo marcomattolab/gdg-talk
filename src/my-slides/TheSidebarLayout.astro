@@ -1,0 +1,31 @@
+---
+import Slide from "../components/Slide.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <h2
+    class="font-black tracking-tighter text-center mb-20"
+    style={{ fontSize: "7rem", lineHeight: "7rem" }}
+  >
+    The <span class="text-elca-red">Sidebar</span> Layout<br />with
+    <a
+      href="https://www.smashingmagazine.com/2021/06/has-native-css-parent-selector/"
+      class="text-elca-red underline"
+      target="_blank"
+      rel="noopener noreferrer">:has()</a
+    >
+  </h2>
+
+  <div
+    class="border-[1rem] rounded-xl border-zinc-800 w-[50rem] h-[30rem] grid grid-cols-[15rem_1fr]"
+  >
+    <div class="bg-elca-red/30 p-4 font-black text-xl">Sidebar</div>
+    <div class="p-4 font-black text-xl">Content</div>
+  </div>
+</Slide>

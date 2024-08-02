@@ -1,0 +1,21 @@
+---
+import Centered from "./Centered.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<div
+  id={`slide${n}`}
+  class="slide grid place-items-center w-screen h-screen"
+  data-n={n}
+>
+  <Centered>
+    <div class="grid place-items-center">
+      <slot />
+    </div>
+  </Centered>
+</div>

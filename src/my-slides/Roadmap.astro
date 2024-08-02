@@ -1,0 +1,25 @@
+---
+import Slide from "../components/Slide.astro";
+import Strong from "../components/Strong.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <h class="text-8xl text-center font-black tracking-tighter">
+    Frontend <Strong>Roadmap</Strong>
+  </h>
+  <br>
+  
+  
+  <a
+  href="https://roadmap.sh/frontend"
+  target="_blank"
+  rel="noopener noreferrer"> 
+    <img src="/imgs/roadmap.png" alt="Roadmap" width="100%">
+  </a>
+</Slide>

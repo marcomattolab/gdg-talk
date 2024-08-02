@@ -1,0 +1,60 @@
+---
+import Slide from "../components/Slide.astro";
+import Strong from "../components/Strong.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <>
+    <h2
+      class="font-black tracking-tighter mb-12"
+      style={{
+        fontSize: "3rem",
+        lineHeight: "1rem",
+      }}
+    >
+      The <Strong>Angular</Strong> framework
+    </h2>
+    <h3>A <b>framework</b> for creating advanced web app in HTML (SPA)</h3>
+    <h3>Ecosystem consists of <b>1.7 million</b> developers, library authors and content creators</h3>
+    <br>
+    <p class="text-zinc-200 font-black text-3xl">
+      Databinding:   <span class="italic">How can update authomatically my UI ?</span>
+    </p>
+    <p class="text-zinc-200 font-black text-3xl">
+      Type Checking TS:  <span class="italic"> How can improve code quality ?</span>
+    </p>
+    <p class="text-zinc-200 font-black text-3xl">
+      Framework: <span class="italic"> How can improve maintanability of my code ?</span>
+    </p>
+    <p class="text-zinc-200 font-black text-3xl">
+      ....
+    </p>
+    
+    <br>
+    <div class="flex-container">
+      <img src="/imgs/versions.png" alt="Angular versions" class="image-60">
+      <img src="/imgs/fe-born.png" alt="FE born" class="image-40">
+    </div>
+    <br>
+
+  </div>
+</Slide>
+<style>
+    .flex-container {
+        display: flex;
+    }
+
+    .image-60 {
+        width: 60%;
+    }
+
+    .image-40 {
+        width: 40%;
+    }
+</style>

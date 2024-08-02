@@ -1,0 +1,19 @@
+---
+import Slide from "../components/Slide.astro";
+import Strong from "../components/Strong.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <h2
+    class="font-black tracking-tighter text-center"
+    style={{ fontSize: "09rem", lineHeight: "10.0rem" }}
+  >
+    Frontend Development with<br /><Strong>Angular</Strong><br />
+  </h2>
+</Slide>

@@ -1,0 +1,123 @@
+---
+import Slide from "../components/Slide.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <div class="w-full max-w-4xl mx-auto" style="margin-top: 20px;">
+    <h2 class="text-5xl font-black tracking-tighter text-center mb-20">
+      Why use Reactive?  
+    </h2>
+    <div
+      class="h-7 bg-gradient-to-r from-elca-red to-elca-blue w-full rounded-full"
+    >
+    </div>
+    <div class="flex justify-between w-full">
+      <div class="py-2 text-2xl rounded-md font-bold mt-4 text-elca-red">
+        NO
+      </div>
+      <div class="py-2 text-2xl rounded-md font-bold mt-4 text-elca-blue">
+        YES
+      </div>
+    </div>
+    <ul class="list-disc text-2xl pl-4 mb-12 mt-16 w-full">
+      <!-- YES -->
+      <li class="mb-4">
+        <span class="text-elca-blue font-bold">Angular Thinking</span> Compliant with the framework’s architecture RxJS
+        </label>
+      </li>
+      <li class="mb-4">
+        <span class="text-elca-blue font-bold">Scalable Data Handling</span>  Reactive programming is well-suited for applications with complex data flows
+        </label>
+      </li>
+      <li class="mb-4">
+        <span class="text-elca-blue font-bold">Declarative Syntax</span>  Reactive programming allows for a declarative style of programming
+      </li>
+
+      <!-- NO -->
+      <li class="mb-4">
+        <span class="text-elca-red font-bold">Steep Learning Curve</span> Reactive programming introduces concepts difficult for developers
+        </label>
+      </li>
+      <li class="mb-4">
+        <span class="text-elca-red font-bold">Overhead for Simple Use Cases</span> Might introduce unnecessary complexity for simple scenarios
+        </label>
+      </li>
+      <li class="mb-4">
+        <span class="text-elca-red font-bold">Error Handling Complexity </span> Handling errors can be more complex
+        </label>
+      </li>
+      <br>
+
+    </ul>
+  </div>
+</Slide>
+
+<script>
+  const axiosAfterInputs = [
+    "axios-after-xmlhttp",
+    "axios-after-promise",
+    "axios-after-interceptors",
+  ].map((id) => document.getElementById(id));
+
+  const axiosAfterMarker = document.getElementById(
+    "axios-after-marker"
+  ) as HTMLAnchorElement;
+
+  axiosAfterInputs.forEach((input) =>
+    input?.addEventListener("change", (ev) => {
+      const n = axiosAfterInputs.filter(
+        (i) => (i as HTMLInputElement).checked
+      ).length;
+
+      axiosAfterMarker.style.transform = `translateX(-${n * 8.5}rem)`;
+      [...Array(4).keys()].forEach((i) =>
+        axiosAfterMarker.classList.remove(`step${i}`)
+      );
+      axiosAfterMarker.classList.add(`step${n}`);
+    })
+  );
+</script>
+
+<style>
+  #axios-after-marker:after {
+    transition: border-color 500ms;
+  }
+
+  #axios-after-marker.step0 {
+    background-color: #007fff;
+  }
+
+  #axios-after-marker.step1 {
+    background-color: #2d71d3;
+  }
+
+  #axios-after-marker.step2 {
+    background-color: #4f66b2;
+  }
+
+  #axios-after-marker.step3 {
+    background-color: #725c91;
+  }
+
+  #axios-after-marker.step0:after {
+    border-top-color: #007fff;
+  }
+
+  #axios-after-marker.step1:after {
+    border-top-color: #2d71d3;
+  }
+
+  #axios-after-marker.step2:after {
+    border-top-color: #4f66b2;
+  }
+
+  #axios-after-marker.step3:after {
+    border-top-color: #725c91;
+  }
+</style>

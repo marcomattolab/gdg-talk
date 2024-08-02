@@ -1,0 +1,18 @@
+---
+import Slide from "../components/Slide.astro";
+import Strong from "../components/Strong.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <h class="text-8xl text-center font-black tracking-tighter">
+    Meteo <Strong>Plugin</Strong>   RxJS
+  </h>
+  <br>
+  <img src="/imgs/rxjs-01.png" alt="Meteo Plugin Reactive" width="100%">
+</Slide>

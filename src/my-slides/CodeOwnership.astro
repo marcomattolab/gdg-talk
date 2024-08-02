@@ -1,0 +1,29 @@
+---
+import Slide from "../components/Slide.astro";
+import Strong from "../components/Strong.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <h2 class="text-8xl font-black tracking-tighter text-center mb-8">
+    The Cost of <span class="text-elca-red">Code Ownership</span>
+  </h2>
+  <p class="text-3xl font-bold mb-20 max-w-4xl">
+    Some projects are currently defining a new strategy aimed to give back
+    control to the user when <span class="italic">"installing"</span> a library.
+  </p>
+
+  <a
+    id="axios-after-marker"
+    href="https://ui.shadcn.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img src="./imgs/shadcn-ui.png" class="rounded-xl" />
+  </a>
+</Slide>

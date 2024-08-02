@@ -1,0 +1,47 @@
+---
+import Slide from "../components/Slide.astro";
+import Strong from "../components/Strong.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <p
+    class="text-center font-black tracking-tighter text-5xl w-full max-w-[50rem]"
+  >
+    <Strong>Evolution</Strong> of <Strong> frontend </Strong> ecosystem
+    <i style="font-size: 1rem; color:gray"> &gt; 2010</i>
+    
+    <div class="image-container">
+      <img src="/imgs/simple-fe-architecture.png" class="block mb-20" alt="Frontend Ecosystem"/>
+      <div class="overlay"></div>
+  </div>
+
+</Slide>
+<style>
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.image-container img {
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48.4%;
+    height: 87%;
+    background-color: rgba(0, 0, 0, 0.92); 
+    pointer-events: none;
+}
+
+</style>

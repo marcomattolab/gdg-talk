@@ -1,0 +1,30 @@
+---
+import Slide from "../components/Slide.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <div class="w-full max-w-6xl mx-auto">
+    <h2 class="text-6xl font-black tracking-tighter text-center mb-20">
+      Reactive Programming
+      <a
+        href="https://medium.com/@marcomatto/coding-chronicles-the-evolution-of-angular-a-frontend-developers-journey-from-angularjs-to-20f4f223e00f"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-elca-red underline"
+      > 
+        RxJS
+      </a>
+    </h2>
+    <div class="flex justify-end w-full">
+      <img src="/imgs/rxjs.png" alt="Reactive Programming">
+      <br>
+      <br>
+
+  </div>
+</Slide>

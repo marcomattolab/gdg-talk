@@ -1,0 +1,26 @@
+---
+import Slide from "../components/Slide.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+ 
+  <ul class="flex items-start">
+    <li>
+      <h1 class="w-full text-center font-black text-4xl">Contact Me</h1>
+      <br/>
+    
+      <a href="http://www.marcomartorana.it/" class="block mb-24">
+        <img
+          id="cvo-road-glide"
+          src="imgs/my-social.png"
+        />
+      </a>
+    </li>
+  </ul>
+</Slide>

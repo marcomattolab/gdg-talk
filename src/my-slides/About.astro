@@ -1,0 +1,19 @@
+---
+import Slide from "../components/Slide.astro";
+import Highlight from "../components/Highlight.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <p class="text-5xl font-black text-center w-full max-w-3xl mx-auto">
+    This talk is a <Highlight>
+      retrospective </Highlight>of my experience as frontend lead
+     with <Highlight> Angular </Highlight> framework. 
+     I'm going to share my personal <Highlight>journey</Highlight> and some recommendation and <Highlight>lesson learnt</Highlight>.
+  </p>
+</Slide>

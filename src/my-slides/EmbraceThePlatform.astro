@@ -1,0 +1,24 @@
+---
+import Slide from "../components/Slide.astro";
+import Strong from "../components/Strong.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <div>
+    <h2
+      class="font-black tracking-tighter mb-12"
+      style={{
+        fontSize: "10rem",
+        lineHeight: "8rem",
+      }}
+    >
+      <Strong>Embrace the platform</Strong> and write modern code
+    </h2>
+  </div>
+</Slide>

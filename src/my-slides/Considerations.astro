@@ -1,0 +1,44 @@
+---
+import Slide from "../components/Slide.astro";
+import Strong from "../components/Strong.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <div class="w-full max-w-5xl mx-auto">
+    <h2 class="text-6xl font-black tracking-tighter text-center mb-20">
+      Considerations / Lesson Learned
+    </h2>
+    <ul class="list-disc text-4xl pl-4 mb-12">
+      <li class="mb-6">
+        <Strong>Tools / Languages </Strong>
+        Evaluate and use <b>appropriate</b> tools and languages depending on specific goals
+      </li>
+      <li class="mb-6">
+        <Strong>Knowledge Increase</Strong>
+        After acquiring a <b>solid base</b> in OOP, HTML, CSS, JS, Git, and Docker..
+      </li>
+      <li class="mb-6">
+        <Strong>Framework / Library </Strong>
+        Follow <i>best practices</i> to improve <b>quality</b> and avoid bad practices to prevent mistakes.
+      </li>
+      <li class="mb-6">
+        <Strong>Embrace the platform</Strong> and write modern code
+      </li> 
+      <li class="mb-6">
+       <Strong>AI </Strong>
+        Leverage AI for trivial tasks but always be aware about generated code
+      </li>
+      <li class="mb-6">
+        <Strong>KIS </Strong>
+          <b>K</b>eep <b>I</b>t <b>S</b>imple may seem trivial, but it is highly relevant!
+      </li>
+      
+    </ul>
+  </div>
+</Slide>

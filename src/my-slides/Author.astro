@@ -1,0 +1,44 @@
+---
+import Slide from "../components/Slide.astro";
+import Highlight from "../components/Highlight.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <div class="grid grid-cols-[auto_1fr] items-center gap-20">
+    <div
+      class="h-[30rem] w-[30rem] bg-cover bg-[url('/imgs/author.jpg')] hover:bg-[url('/imgs/hobby.jpeg')]"
+    >
+    </div>
+    <div class="w-full max-w-2lg">
+      <h2 class="text-7xl font-black">Marco Martorana</h2>
+      <p class="font-black text-2xl text-elca-red mb-12">
+        Mission: Transforming Academic knowledge into impactful, real-world solutions.
+      </p>
+      <h3 class="font-black text-3xl mb-4">Professional Experience:</h3>
+      <ul class="list-disc text-2xl pl-4 mb-12">
+        <li>Senior Software Engineer & Frontend Lead <b style="color:red">@ELCA</b></li>
+        <li>Development on frontend side with Angular</li>
+        <li>Development on backend side with Spring/Java</li>
+      </ul>
+      <h3 class="font-black text-3xl mb-4">Teaching & Training</h3>
+      <ul class="list-disc text-2xl pl-4 mb-12">
+        <li>Organizer and facilitator of training courses:</li>
+        <ul class="list-disc text-2xl pl-5 mb-12">
+          <li>Conducted: 3 Angular Courses</li>
+          <li>Conducted: 1 OOP Course</li>
+      </ul>
+      </ul>
+      <p class="font-black text-4xl leading-8">
+        <Highlight>
+          Reach out for any questions!
+        </Highlight>
+      </p>
+    </div>
+  </div>
+</Slide>

@@ -1,0 +1,25 @@
+---
+import Slide from "../components/Slide.astro";
+import Strong from "../components/Strong.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <p
+    class="text-center font-black tracking-tighter text-6xl w-full max-w-[50rem]"
+  >
+    <Strong>Server Side</Strong> Rendering <br/>
+    <Strong>  Modern </Strong>  Applications
+    <p style="font-size: 1.3rem; color:black"></p>
+    <br>
+    <!-- https://excalidraw.com/ -->
+    <div class="image-container">
+      <img src="/imgs/server-side-rendering.png" class="block mb-20" alt="Server Side Rendering"/>
+  </div>
+
+</Slide>

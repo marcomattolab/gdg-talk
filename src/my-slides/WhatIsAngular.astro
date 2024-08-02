@@ -1,0 +1,20 @@
+---
+import Slide from "../components/Slide.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <div class="w-full max-w-6xl mx-auto">
+    <h2 class="text-8xl font-black tracking-tighter text-center mb-20">
+      What is Angular<br />
+    </h2>
+    <div class="flex justify-between w-full">
+      <img src="/imgs/what-is-angular.png" alt="What Is Angular">
+    </div>
+  </div>
+</Slide>

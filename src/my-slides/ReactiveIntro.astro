@@ -1,0 +1,24 @@
+---
+import Slide from "../components/Slide.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <div class="w-full max-w-6xl mx-auto">
+    <h2 class="text-6xl font-black tracking-tighter text-center mb-20">
+      Data manipulation with <br>
+      <i style="color: red;">Reactive Programming</i> 
+    </h2>
+    <h4 class="text-4xl font-gray tracking-tighter text-center mb-20">
+      Meteo Widget
+    </h4>
+    <div style="display: flex; justify-content: center;">
+      <img src="/imgs/example-reactive-01.png" alt="Meteo Example" width="60%">
+    </div>
+  </div>
+</Slide>

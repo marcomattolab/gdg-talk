@@ -1,0 +1,15 @@
+---
+import Slide from "../components/Slide.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+
+<Slide n={n}>
+  <div class="w-full max-w-4xl mx-auto">
+    <img src="./imgs/state-of-html.png" class="scale-125" />
+  </div>
+</Slide>

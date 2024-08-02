@@ -1,0 +1,25 @@
+---
+import Slide from "../components/Slide.astro";
+import Strong from "../components/Strong.astro";
+
+type Props = {
+  n: string;
+};
+
+const { n } = Astro.props;
+---
+<Slide n={n}>
+  <p
+    class="text-center font-black tracking-tighter text-6xl w-full max-w-[50rem]"
+  >
+    <Strong>Client Side</Strong> Rendering <br/>
+    <Strong>S</Strong>ingle <Strong>P</Strong>age  <Strong>  A</Strong>pplication
+    <p style="font-size: 1.3rem; color:black">UI updated by client ex. Ajax, Angular</p>
+    
+    <div class="image-container">
+      <img src="/imgs/spa-client-side-rendering.png" alt="Client Side Rendering" />
+    </div>
+  </div>
+  <br>
+  <br>
+</Slide>
